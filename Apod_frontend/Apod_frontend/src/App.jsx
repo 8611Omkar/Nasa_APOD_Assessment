@@ -3,7 +3,6 @@ import TodayCard from "./components/TodayCard";
 import Gallery from "./components/Gallery";
 import DatePicker from "./components/DatePicker";
 import DetailModal from "./components/DetailModel";
-import "./App.css";
 
 const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:8080/api/apod";
 
@@ -34,12 +33,10 @@ export default function App() {
   };
 
   return (
-  <>
-    <div className="app-bg">
+    <div className="container">
       <header>
         <h1>NASA APOD Explorer</h1>
         <p>Explore Astronomy Picture of the Day</p>
-        
       </header>
 
       <main>
@@ -48,21 +45,14 @@ export default function App() {
           <DatePicker onPick={onDatePick} />
         </section>
 
-        <section className="recent-gallery">
+        <section>
           <h2>Recent</h2>
           <Gallery items={recent} onOpen={setSelected} />
         </section>
       </main>
 
       {selected && <DetailModal item={selected} onClose={() => setSelected(null)} />}
-
+      <footer>Powered by NASA APOD</footer>
     </div>
-      <footer className="footer">
-        <div className="footer-content">
-          <p>Powered by NASA APOD</p>
-          <p className="small">Images & data courtesy NASA APOD API</p>
-          </div>
-      </footer>
-      </>
   );
 }

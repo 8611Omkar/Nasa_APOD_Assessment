@@ -105,6 +105,9 @@ header h1 {
     padding: 22px; 
     border-radius: 10px; 
     max-width: 900px; 
+    max-height: 90vh;
+    overflow-y: auto;        
+    overflow-x: hidden;
 }
 
 /* Footer */
